@@ -20,6 +20,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
