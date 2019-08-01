@@ -12,7 +12,7 @@ RSpec.describe 'messages spec', type: :feature do
         visit '/'
         fill_in :message_content, with: "This is my first message"
         click_button "Send"
-        
+        visit '/'
         within '#messages' do
           expect(page).to have_content(user_1.email)
           expect(page).to have_content("This is my first message")
