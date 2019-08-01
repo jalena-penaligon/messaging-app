@@ -5,8 +5,7 @@
   <section id="messages">
     <% if @messages.any? %>
       <% @messages.each do |message| %>
-        <p><%= message.user.email %><br />
-        <%= message.content %></p>
+        <p><b><%= message.user.email %></b>:<br /> <%= message.content %></p>
       <% end %>
     <% end %>
   </section>
