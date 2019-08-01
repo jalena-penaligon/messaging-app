@@ -11,7 +11,9 @@ class MessagesController < ApplicationController
   def create
     message = current_user.messages.new(message_params)
     if message.save
-      redirect_to root_path
+      ActionCable.server.broadcast 'messages',
+                                    message: message.content,
+                                    user: message.user.email
     else
       flash[:error] = 'Something went wrong, your message was not sent.'
     end
