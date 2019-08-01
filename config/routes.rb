@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :messages, only: [:create]
+  mount ActionCable.server => '/cable'
 end
