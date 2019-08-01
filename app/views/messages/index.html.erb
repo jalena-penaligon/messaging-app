@@ -3,6 +3,7 @@
 <% else %>
   Logged in as <%= @user.email %>. <%= link_to "Log Out", logout_path, method: :delete %>
   <section id="messages">
+    <h2>Send a Message to <%= @recipient.email %></h2>
     <% if @messages.any? %>
       <% @messages.each do |message| %>
         <p><b><%= message.user.email %></b>:<br /> <%= message.content %></p>
