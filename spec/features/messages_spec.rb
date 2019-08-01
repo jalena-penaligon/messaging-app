@@ -11,6 +11,7 @@ RSpec.describe 'messages spec', type: :feature do
 
         visit '/'
         fill_in :message_content, with: "This is my first message"
+  
         click_button "Send"
         visit '/'
         within '#messages' do
